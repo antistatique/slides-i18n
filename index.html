@@ -1,0 +1,922 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Être prêt pour l'international - une présentation sur les défis i18n, l10n – Antistatique - Guillaume Berry et Marc Friederich</title>
+		<meta name="description" content="Conférence pour le Salon LEC à Genève - le 15 juin">
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/zufrieden.css" id="theme">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/monokai.css">		
+		<style>
+			
+		</style>
+		
+	</head>
+	<body>
+		<svg xmlns="//www.w3.org/2000/svg" version="1.1" class="svg-filters" style="display:none;">
+		  <defs>
+			<filter id="marker-shape">
+			  <feTurbulence type="fractalNoise" baseFrequency="0 0.15" numOctaves="1" result="warp" />
+			  <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
+			</filter>
+		  </defs>
+		</svg>
+		<div class="reveal">
+			<div class="slides">
+				<!-- <section data-background="#670083" >
+					<img src="https://www.lec-expo.com/files/cms/imgs/logo-lec.png" alt="logo salon LEC">
+				</section> -->
+				<section>
+					<section style="font-size:70%;">
+						<h2>Un web adapté à tous<br/><span>chaque langue, chaque culture.</span></h2>
+						<br/>
+						<small>Salon LEC — 21 septembre 2021
+								<div class="intro-logo">
+									<svg width="172" height="28" viewBox="0 0 172 28" fill="none" xmlns="http://www.w3.org/2000/svg" id="logo_antistatique_intro"><path d="M153.893 6.60262H150.267V15.6751C150.267 18.0227 148.756 19.6856 146.641 19.6856C144.949 19.6856 143.861 18.4629 143.861 16.0419V6.60262H140.295V16.4087C140.295 21.0795 142.834 23.0358 145.759 23.0358C147.814 23.0358 149.445 21.8742 150.231 20.7371H150.255V22.669H153.881V6.60262H153.893ZM45.8707 22.6812H49.9199V19.1109H46.7772C46.2696 19.1109 45.8707 18.683 45.8707 18.1939V9.96507H49.9199V6.60262H45.8707V2.01747H42.2446V6.60262H38.9206V9.96507H42.2446V19.1109C42.2446 21.0917 43.8763 22.6812 45.8707 22.6812ZM108.518 22.6812H112.568V19.1109H109.425C108.917 19.1109 108.518 18.683 108.518 18.1939V9.96507H112.568V6.60262H108.518V2.01747H104.892V6.60262H101.568V9.96507H104.892V19.1109C104.892 21.0917 106.512 22.6812 108.518 22.6812ZM160.215 13.0585C160.602 10.9555 162.209 9.5738 164.107 9.5738C165.944 9.5738 167.612 10.9432 167.951 13.0585H160.215ZM164.288 23.048C167.528 23.048 170.09 21.8009 171.637 18.0349L167.83 17.607C167.25 19.0131 165.956 19.8323 164.3 19.8323C162.27 19.8323 160.553 18.4629 160.215 15.8218H172C172 9.34148 168.229 6.22358 164.022 6.22358C159.695 6.22358 156.287 9.64716 156.287 14.6603C156.287 19.6734 159.695 23.048 164.288 23.048ZM129.453 19.6611C127.012 19.6611 125.102 17.607 125.102 14.6725C125.102 11.7135 127.012 9.68384 129.453 9.68384C131.895 9.68384 133.829 11.7013 133.829 14.6725C133.829 17.607 131.895 19.6611 129.453 19.6611ZM117.306 4.89083C118.659 4.89083 119.699 3.81485 119.699 2.44541C119.699 1.10044 118.672 0 117.306 0C115.94 0 114.888 1.10044 114.888 2.44541C114.888 3.81485 115.94 4.89083 117.306 4.89083ZM133.744 28H137.37L137.431 6.60262H133.805V8.37555H133.708C132.741 7.39738 131.17 6.23581 128.752 6.23581C124.582 6.23581 121.379 9.65939 121.379 14.6725C121.379 19.6856 124.582 23.048 128.752 23.048C131.17 23.048 132.741 21.8865 133.708 20.8716H133.805L133.744 28ZM115.493 22.6812H119.058V6.60262H115.493V22.6812ZM91.4029 23.048C93.7599 23.048 95.2104 22.131 96.4191 19.8445H97.3861C97.3861 21.9231 97.6883 22.6812 98.8365 22.6812H102.136V19.1109H100.057V12.6306C100.057 8.77904 97.1806 6.24803 93.1677 6.24803C89.2031 6.23581 86.423 8.25328 86.2417 11.7135H89.8679C90.1096 10.1852 91.415 9.26812 93.1072 9.26812C94.8236 9.26812 96.4312 10.3686 96.4312 12.4227V12.9729C96.4312 12.9729 95.0774 12.9729 91.7414 13.1197C87.4142 13.3031 85.9396 15.6629 85.9396 18.0105C85.9396 21.0917 88.2119 23.048 91.4029 23.048ZM92.2249 20.0279C90.7502 20.0279 89.6866 19.2943 89.6866 17.9493C89.6866 16.7878 90.2668 15.9686 92.5271 15.7729C94.4006 15.6262 96.4191 15.6262 96.4191 15.6262V16.1397C96.4312 18.6463 94.9082 20.0279 92.2249 20.0279ZM80.1619 22.6812H84.2111V19.1109H81.0684C80.5608 19.1109 80.1619 18.683 80.1619 18.1939V9.96507H84.2111V6.60262H80.1619V2.01747H76.5358V6.60262H73.2118V9.96507H76.5358V19.1109C76.5358 21.0917 78.1796 22.6812 80.1619 22.6812ZM54.7547 4.89083C56.0602 4.89083 57.1117 3.81485 57.1117 2.44541C57.1117 1.10044 56.0481 0 54.7547 0C53.3647 0 52.3373 1.10044 52.3373 2.44541C52.3373 3.81485 53.3647 4.89083 54.7547 4.89083ZM65.8145 23.048C69.5373 23.048 72.0031 20.945 72.0031 18.0105C72.0031 14.6114 69.3197 13.7555 66.9265 13.2175C64.6299 12.6306 62.9377 12.4227 62.9377 11.041C62.9377 10.0017 63.9047 9.39039 65.2585 9.39039C66.9265 9.39039 67.8209 10.3686 67.9781 11.4934H71.7976C71.4954 8.33886 68.9934 6.23581 65.3914 6.23581C61.8862 6.23581 59.227 8.49782 59.227 11.2734C59.227 14.8437 62.2246 15.7729 64.7871 16.3476C67.0836 16.8978 68.389 17.3013 68.389 18.4017C68.389 19.4044 67.1803 19.8934 65.754 19.8934C64.4003 19.8934 63.2762 19.3065 62.9498 17.8148H58.9006C59.2512 21.0917 61.8257 23.048 65.8145 23.048ZM52.845 22.6812H56.5316V6.60262H52.845V22.6812ZM23.8117 22.6812H27.4378V13.6087C27.4378 11.2611 28.9487 9.59825 31.0639 9.59825C32.7561 9.59825 33.844 10.821 33.844 13.2419V22.6812H37.4097V12.8751C37.4097 8.20437 34.8714 6.24803 31.9463 6.24803C29.8915 6.24803 28.2597 7.40961 27.4741 8.54673H27.4378V6.60262H23.8117V22.6812ZM7.37316 13.7555L10.3949 5.13537H11.3015L14.3837 13.7555H7.37316ZM0 22.6812H3.77119L5.9227 17.4603H15.8946L18.0098 22.6935H21.6964L13.1145 1.32052H8.52143L0 22.6812Z" fill="#FF0099"></path></svg>
+								</div>
+							<div class="intro">
+								<div class="profile-card">
+								<img src="src/marc_circle.png" alt="Marc Friederich portrait">
+								<p><strong>Marc Friederich</strong><br/>Associé</p>
+								</div>
+								<div class="profile-card">
+									<img src="src/guillaume_circle.png" alt="Guillaume Berry portrait">
+									<p><strong>Guillaume Berry</strong><br/>Associé</p>
+								</div>								
+							</div>
+						</small>
+						<aside class="notes">
+							Bonjour ;-) et bienvenue dans cette conférence <br/>
+							Ça fait plaisir de vous voir en vrai !
+						</aside>
+					</section>
+					<section>
+						<h1 style="font-size:5vw;">Un web adapté à tous<br/><span>chaque langue, chaque culture.</span></h1>
+						<aside class="notes">
+							C'est parti !
+							
+						</aside>
+					</section>
+					<section>
+						<h2>
+							Bonjour · Hallo · Hello<br>
+							Ciao · صباح الخير · 你好<br>
+							Hej · おはようございます<br>
+							Hola · Grützi · Hei<br>
+							Добрий ранок · Chào
+						</h2>
+					</section>
+					
+				</section>
+
+				<!-- ## À propos de nous -->
+
+				<section>
+
+				<section data-background-size="contain" data-background-position="right" data-background="src/guillaume.png">
+				
+
+					<div style="text-align:right; padding-right: 20vw;">
+					<h2 style="font-size:5vw;"><strong style="padding-right:4vw;">Guillaume</strong><br/>Berry<br/><span style="padding-right:4vw;font-size:60%;line-height:130%;display:block;">Art director<br/></span></h2>
+					</div>
+				
+				<aside class="notes">
+					Guillaume Berry<br/>
+					
+				</aside>
+
+				</section>
+
+				<section data-background-size="contain" data-background-position="right" data-background="src/marc.png">
+				
+
+					<div style="text-align:right; padding-right: 20vw;">
+					<h2 style="font-size:5vw;"><strong style="padding-right:4vw;">Marc</strong><br/> Friederich<br/><span style="padding-right:4vw;font-size:60%;line-height:130%;display:block;">Spécialiste web<br/></span></h2>
+					</div>
+				
+				<aside class="notes">
+					Marc, je refais des sites depuis 20 ans.<br/>
+					Bon c'est vrai au début je <b>faisais</b> des sites, ça fait seulement 10 ans que j'en <b>refais</b>.
+				</aside>
+
+				</section>
+				<section data-background="src/antistatique.jpg">
+					<style>
+						#logo_antistatique{
+							width: 60vw;
+							height:auto;
+						}
+					</style>
+					<svg width="172" height="28" viewBox="0 0 172 28" fill="none" xmlns="http://www.w3.org/2000/svg" id="logo_antistatique"><path d="M153.893 6.60262H150.267V15.6751C150.267 18.0227 148.756 19.6856 146.641 19.6856C144.949 19.6856 143.861 18.4629 143.861 16.0419V6.60262H140.295V16.4087C140.295 21.0795 142.834 23.0358 145.759 23.0358C147.814 23.0358 149.445 21.8742 150.231 20.7371H150.255V22.669H153.881V6.60262H153.893ZM45.8707 22.6812H49.9199V19.1109H46.7772C46.2696 19.1109 45.8707 18.683 45.8707 18.1939V9.96507H49.9199V6.60262H45.8707V2.01747H42.2446V6.60262H38.9206V9.96507H42.2446V19.1109C42.2446 21.0917 43.8763 22.6812 45.8707 22.6812ZM108.518 22.6812H112.568V19.1109H109.425C108.917 19.1109 108.518 18.683 108.518 18.1939V9.96507H112.568V6.60262H108.518V2.01747H104.892V6.60262H101.568V9.96507H104.892V19.1109C104.892 21.0917 106.512 22.6812 108.518 22.6812ZM160.215 13.0585C160.602 10.9555 162.209 9.5738 164.107 9.5738C165.944 9.5738 167.612 10.9432 167.951 13.0585H160.215ZM164.288 23.048C167.528 23.048 170.09 21.8009 171.637 18.0349L167.83 17.607C167.25 19.0131 165.956 19.8323 164.3 19.8323C162.27 19.8323 160.553 18.4629 160.215 15.8218H172C172 9.34148 168.229 6.22358 164.022 6.22358C159.695 6.22358 156.287 9.64716 156.287 14.6603C156.287 19.6734 159.695 23.048 164.288 23.048ZM129.453 19.6611C127.012 19.6611 125.102 17.607 125.102 14.6725C125.102 11.7135 127.012 9.68384 129.453 9.68384C131.895 9.68384 133.829 11.7013 133.829 14.6725C133.829 17.607 131.895 19.6611 129.453 19.6611ZM117.306 4.89083C118.659 4.89083 119.699 3.81485 119.699 2.44541C119.699 1.10044 118.672 0 117.306 0C115.94 0 114.888 1.10044 114.888 2.44541C114.888 3.81485 115.94 4.89083 117.306 4.89083ZM133.744 28H137.37L137.431 6.60262H133.805V8.37555H133.708C132.741 7.39738 131.17 6.23581 128.752 6.23581C124.582 6.23581 121.379 9.65939 121.379 14.6725C121.379 19.6856 124.582 23.048 128.752 23.048C131.17 23.048 132.741 21.8865 133.708 20.8716H133.805L133.744 28ZM115.493 22.6812H119.058V6.60262H115.493V22.6812ZM91.4029 23.048C93.7599 23.048 95.2104 22.131 96.4191 19.8445H97.3861C97.3861 21.9231 97.6883 22.6812 98.8365 22.6812H102.136V19.1109H100.057V12.6306C100.057 8.77904 97.1806 6.24803 93.1677 6.24803C89.2031 6.23581 86.423 8.25328 86.2417 11.7135H89.8679C90.1096 10.1852 91.415 9.26812 93.1072 9.26812C94.8236 9.26812 96.4312 10.3686 96.4312 12.4227V12.9729C96.4312 12.9729 95.0774 12.9729 91.7414 13.1197C87.4142 13.3031 85.9396 15.6629 85.9396 18.0105C85.9396 21.0917 88.2119 23.048 91.4029 23.048ZM92.2249 20.0279C90.7502 20.0279 89.6866 19.2943 89.6866 17.9493C89.6866 16.7878 90.2668 15.9686 92.5271 15.7729C94.4006 15.6262 96.4191 15.6262 96.4191 15.6262V16.1397C96.4312 18.6463 94.9082 20.0279 92.2249 20.0279ZM80.1619 22.6812H84.2111V19.1109H81.0684C80.5608 19.1109 80.1619 18.683 80.1619 18.1939V9.96507H84.2111V6.60262H80.1619V2.01747H76.5358V6.60262H73.2118V9.96507H76.5358V19.1109C76.5358 21.0917 78.1796 22.6812 80.1619 22.6812ZM54.7547 4.89083C56.0602 4.89083 57.1117 3.81485 57.1117 2.44541C57.1117 1.10044 56.0481 0 54.7547 0C53.3647 0 52.3373 1.10044 52.3373 2.44541C52.3373 3.81485 53.3647 4.89083 54.7547 4.89083ZM65.8145 23.048C69.5373 23.048 72.0031 20.945 72.0031 18.0105C72.0031 14.6114 69.3197 13.7555 66.9265 13.2175C64.6299 12.6306 62.9377 12.4227 62.9377 11.041C62.9377 10.0017 63.9047 9.39039 65.2585 9.39039C66.9265 9.39039 67.8209 10.3686 67.9781 11.4934H71.7976C71.4954 8.33886 68.9934 6.23581 65.3914 6.23581C61.8862 6.23581 59.227 8.49782 59.227 11.2734C59.227 14.8437 62.2246 15.7729 64.7871 16.3476C67.0836 16.8978 68.389 17.3013 68.389 18.4017C68.389 19.4044 67.1803 19.8934 65.754 19.8934C64.4003 19.8934 63.2762 19.3065 62.9498 17.8148H58.9006C59.2512 21.0917 61.8257 23.048 65.8145 23.048ZM52.845 22.6812H56.5316V6.60262H52.845V22.6812ZM23.8117 22.6812H27.4378V13.6087C27.4378 11.2611 28.9487 9.59825 31.0639 9.59825C32.7561 9.59825 33.844 10.821 33.844 13.2419V22.6812H37.4097V12.8751C37.4097 8.20437 34.8714 6.24803 31.9463 6.24803C29.8915 6.24803 28.2597 7.40961 27.4741 8.54673H27.4378V6.60262H23.8117V22.6812ZM7.37316 13.7555L10.3949 5.13537H11.3015L14.3837 13.7555H7.37316ZM0 22.6812H3.77119L5.9227 17.4603H15.8946L18.0098 22.6935H21.6964L13.1145 1.32052H8.52143L0 22.6812Z" fill="#FF0099"></path></svg>
+					<aside class="notes">
+						J'ai même co-fondé une agence qui refait des sites (pour vous dire à quel point c'est un super business)<br/>
+						En terme de refonte, nous avons par exemple
+						<!-- Web agency in Geneva, Lausanne and Miami<br/>
+						Human centric digital agency - build for the web - solution for our client.<br/>
+						Always looking for great client, and awesome collaborators -->
+					</aside>
+				</section>
+				<section data-background-color="#570039" class="has-dark-background star-background"  data-background="src/star.svg" data-background-opacity="0.3">
+					<h2>Agence Web Suisse <span>indépendante</span></h2>
+					<p>Stratégie, Design et Technologie</p>
+					<div class="pastille-qui-tourne">
+						<p>Stand E34</p>
+					<svg width="158" height="155" viewBox="0 0 158 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M141.747 94.0168C140.04 100.387 131.301 103.647 127.769 109.002C124.192 114.521 124.852 123.801 119.745 127.859C114.637 131.917 105.712 129.35 99.6496 131.752C93.6313 133.991 88.7026 141.948 82.1436 142.291C75.7476 142.678 70.0163 135.365 63.6563 133.661C57.2962 131.957 48.6766 135.424 43.3309 131.891C37.8222 128.315 37.5324 118.959 33.4398 114.011C29.3909 108.9 20.3778 106.66 17.9837 100.592C15.7526 94.5674 20.8007 86.8172 20.463 80.2497C20.4077 73.933 14.4696 66.7401 16.1763 60.3704C17.8831 54.0006 26.6221 50.7404 30.1545 45.385C33.7307 39.8662 33.071 30.5867 38.1785 26.5285C43.2859 22.4704 52.2115 25.037 58.2735 22.6351C64.2917 20.3965 69.2204 12.4393 75.7795 12.0961C82.1755 11.7093 87.9067 19.0217 94.2668 20.7259C100.627 22.4301 109.246 18.9629 114.592 22.4959C120.101 26.0727 120.391 35.4282 124.483 40.376C128.532 45.4871 137.545 47.7271 139.939 53.7953C142.17 59.8198 137.122 67.57 137.46 74.1375C137.515 80.4542 143.497 87.4837 141.747 94.0168Z" fill="#FFF618"/>
+						</svg>
+						
+					</div>
+						
+					<aside class="notes">
+						Solutions numériques à l’aide de stratégie, design et technologie afin de créer des expériences clients qui comptent vraiment.<br/>
+						Présent au Salon, on se réjouit de vous accueillir à notre stand :-)
+					</aside>
+				</section>
+				<section data-background-color="#570039" class="has-dark-background"  data-background="src/team.png"   data-background-size="contain">
+					
+					<aside class="notes">
+						Une équipe d'expert
+					</aside>
+				</section>				
+				<section data-background-color="#570039" class="has-dark-background" data-background="src/as_letemps.png" data-background-size="contain">
+					<aside class="notes">
+						Redesigné le site du quotidien Le Temps
+					</aside>
+				</section>
+				<section data-background-color="#570039" class="has-dark-background" data-background="src/as_admin.png" data-background-size="contain">
+					<aside class="notes">
+						Recodé les sites de la confédération
+					</aside>
+				</section>
+				<section data-background-color="#570039" class="has-dark-background" data-background="src/as_msf.png" data-background-size="contain">
+					<aside class="notes">
+						La semaine passée, nous avons publié la refonte complète de Médecins Sans Frontières
+					</aside>
+				</section>
+				<section data-background-color="#570039" class="has-dark-background" data-background="src/as_vdg.png" data-background-size="contain">
+					<aside class="notes">
+						Nous sommes en train de redesigner le site de la ville de Genève
+					</aside>
+				</section>
+				<section data-background-color="#570039" class="has-dark-background" data-background="src/as_epfl.png" data-background-size="contain">
+					<aside class="notes">
+						Et à venir dans les prochains mois, le redesign des sites de l'EPFL<br>
+
+						Un petit peu d'expérience dans les refontes ... je suis impatient de vous expliquer les ficelles du business.
+					</aside>
+				</section>
+			</section>
+
+			
+			<section>
+
+				<section>
+					<h1>Introduction</h1>
+					<aside class="notes">
+						<strong>Marc</strong> Une introduction pour vous expliquer pourquoi vous ne devez pas partir tout de suite ;-).<br/>
+					</aside>
+				</section>
+
+				<section>
+					<img src="lib/svg/emoji/1f1e8-1f1ed.svg" style="width:66%;">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Pourquoi nous avions envie de vous parler de ce sujet ?<br/>
+						La suisse : 4 langues officielles (FR / DE / IT / RM)<br/>
+						Tous nos projets même les plus petits sont multi-langue
+					</aside>
+				</section>
+
+				<section>
+					<h1 class="monospaced">l10n</h1>
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						Commençons par le terme l10n : localisation<br>
+						➡ Le fait d'avoir une version spécifique à une culture
+					</aside>
+				</section>
+
+				<section data-background="lib/svg/l10n-count.svg" data-background-size="100%">
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						localisation ... 10 lettres entre le L et le N
+					</aside>
+				</section>
+
+				<section>
+					<h1 class="monospaced">i18n</h1>
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						Ensuite le i18n : internationalisation<br>
+						➡ Le fait de prévoir la prise en charge de multiples cultures
+					</aside>
+				</section>
+
+				<section data-background="lib/svg/i18n-count.svg" data-background-size="100%">
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						internationalisation<br/>
+						Oups, ça dépasse ;-)<br/>
+						La on comprend mieux pourquoi nous disons i18n<br/>
+
+					</aside>
+				</section>
+
+				<section>
+					<h2 class="monospaced">l10n</h2>
+					<h2 class="monospaced">i18n</h2>
+					<h2 class="monospaced">g11n</h2>
+					<h2 class="monospaced">L12y</h2>
+					<h2 class="monospaced">NLS&nbsp;</h2>
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						Bienvenue dans le monde des numéronymes & accronymes !<br>
+						<strong>g11n</strong> IBM & Sun (globalization / glocalization)<br/>
+						<strong>L12y</strong> Microsoft (localizability)<br/>
+						<strong>NLS</strong> HP  (National/Native Language Support)
+					</aside>
+				</section>
+
+				<section>
+					<h1>a11y</h1>
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						D'ailleurs vous devez connaitre celui-ci
+					</aside>
+				</section>
+
+				<section data-background="lib/img/osakan_market.jpg" data-background-size="cover">
+					<h1 class="light dark-shadow">Cultures ?</h1>
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						Est-ce que la culture d'une personne peut être définie par un ensemble qui se compose d'un territoires et d'une langue ?
+					</aside>
+				</section>
+
+				<section data-background="lib/img/osakan_market.jpg" data-background-size="cover">
+					<h1 class="light dark-shadow">Normes</h1>
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						En tout cas, c'est de cette manière que les normes ISO défnissent la culture
+					</aside>
+				</section>
+
+				<section>
+					<h1 class="monospaced"><span>fr</span><span class="fragment"><span class="fragment semi-fade-out">_latin</span></span><span class="fragment">_CH</span></h1>
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+					Culture en français -> Locale<br/>
+					Langue + Script + Territoire
+						--> Latin pour les lettres latines A-Z ... pas très utiles pour nous francophone ... mais pensez aux langues comme le japonais que s'écrit en kanji, Hiragana et Katakana
+					fr_latin_FR
+					</aside>
+				</section>
+				<section class="mini-list">
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_GF = "French (French Guiana)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_TG = "French (Togo)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_SC = "French (Seychelles)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_VU = "French (Vanuatu)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_RE = "French (Réunion)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_TN = "French (Tunisia)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_GN = "French (Guinea)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_HT = "French (Haiti)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_GP = "French (Guadeloupe)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_GQ = "French (Equatorial Guinea)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_CA = "French (Canada)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_SN = "French (Senegal)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_CD = "French (Congo - Kinshasa)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_PF = "French (French Polynesia)"</span>
+					<span class="list-element monospaced">fr_CH <span class="fragment" data-fragment-index="1"> = "French (Switzerland)"</span></span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_DJ = "French (Djibouti)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_CF = "French (Central African Republic)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_CG = "French (Congo - Brazzaville)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_FR = "French (France)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_CI = "French (Côte d’Ivoire)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_BE = "French (Belgium)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_BF = "French (Burkina Faso)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_NC = "French (New Caledonia)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_SY = "French (Syria)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_PM = "French (St. Pierre & Miquelon)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_NE = "French (Niger)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_MA = "French (Morocco)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_CM = "French (Cameroon)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_BI = "French (Burundi)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_BJ = "French (Benin)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_RW = "French (Rwanda)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_MC = "French (Monaco)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_BL = "French (St. Barthélemy)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_MF = "French (St. Martin)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_MG = "French (Madagascar)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_DZ = "French (Algeria)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_ML = "French (Mali)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_MQ = "French (Martinique)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_WF = "French (Wallis & Futuna)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_MR = "French (Mauritania)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_MU = "French (Mauritius)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_KM = "French (Comoros)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_YT = "French (Mayotte)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_LU = "French (Luxembourg)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_GA = "French (Gabon)"</span>
+					<span class="list-element monospaced fragment" data-fragment-index="2">fr_TD = "French (Chad)"</span>
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Les locales francophones supportées dans les librairies iOS
+					</aside>
+				</section>
+
+				<section data-background="lib/svg/emoji/1f5fa.svg" data-background-size="50%">
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						Ce thème est important : L'i18n comme l'a11y est une forme d'inclusion de tous les publics (Reconnaissance)
+					</aside>
+				</section>
+
+
+				<section data-background="lib/img/cookpad-japanese-website.png" data-background-color="#fff" data-background-size="contain">
+					<img src="lib/svg/english-language-kanji.svg" alt="" class="fragment"/>
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Qu'est-ce que je fais sur ce site de nouille japonaise.<br/>
+						Bon, maintenant, où est-ce qu'on change la langue ?<br/>
+						English language
+					</aside>
+				</section>
+
+				<section>
+					<h2>Connaître la "locale" de l'utilisateur c'est important… </h2>
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						On est tous d'accord que connaitre la culture de notre utilisateur est important.
+						Comment fait-on pour l'obtenir !
+					</aside>
+				</section>
+			</section>
+
+			<section>
+
+				<section>
+					<h1 class="light">Plutôt <span class="monospaced">de_CH</span> oder <span class="monospaced">fr_CH</span></h1>
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Je suis suisse d'accord ... mais
+					</aside>
+				</section>
+
+				<section data-background="lib/svg/emoji/1f575.svg" data-background-color="#000032" data-background-size="50%">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						De quoi disposons-nous sur nos visiteurs ?<br/>
+						- IP, localisation mouais<br/>
+						- Langue du navigateur<br/>
+						- Referer (d'où la personne vient)<br/>
+						- Toutes les infos techniques qui nous servent pas ici ;-) Browser, OS, résolution etc ...
+					</aside>
+				</section>
+
+				<section data-background="lib/svg/emoji/1f916.svg" data-background-color="#000032" data-background-size="50%">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Détection automatique de la culture ?
+						Utiliser l'extension de domaine pour arriver sur un pays<br/>
+						Détecter la langue du navigateur<br/>
+						Sachez surtout qu'aucun script de géolocalisation n'est fiable<br/>
+					</aside>
+				</section>
+
+				<section data-background="lib/img/laponie.jpg" data-background-color="#000032" data-background-size="cover">
+					<aside class="notes">
+						<strong>Marc</strong> Bon, un exemple concret.<br><br/>
+						Je veux aller visiter la finlande
+					</aside>
+				</section>
+
+				<section data-background="lib/img/finnair-1.png" data-background-color="#000032" data-background-size="80%">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						finnair.com -> global splash screen avec uniquement les pays</br>
+						A parfait, la Suisse à droite
+					</aside>
+				</section>
+
+				<section data-background="lib/img/finnair-2.png" data-background-color="#000032" data-background-size="80%">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						J'arrive sur le site en suisse-allemand, super ! (bon j'ai l'habitude, kein problem)<br/>
+						Je vois le drapeau en haut, je clique
+					</aside>
+				</section>
+				<section data-background="lib/img/finnair-3.png" data-background-color="#000032" data-background-size="80%">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						J'arrive à nouveau sur un global splash screen, cette fois avec la langue ?!
+						À noter que pour les suisse-italophone, ils devront choisir italien avec les prix en Euro ou Français avec les prix en CHF
+					</aside>
+				</section>
+				<section data-background="lib/img/finnair-4.png" data-background-color="#000032" data-background-size="80%">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Finalement, me voilà sur ma page<br/>
+						Nous avons effectué des tests utilisateurs sur finnair.com. (URL + je ne vais jamais sur la suisse, les prix sont plus hauts)
+					</aside>
+				</section>
+
+				<section data-background="lib/svg/language-selection-facebook-splash.svg" data-background-color="#000032" data-background-size="60%">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Finnair ne proposait que les pays, Facebook ne propose que les langues<br/>
+						Écrire la langue dans la langue (Français et pas French, 日本語 et pas Japonais)
+					</aside>
+				</section>
+
+				<section data-background="lib/img/olympique.jpg" data-background-color="#000032" data-background-size="cover">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Vu au Musée olympique
+					</aside>
+				</section>
+
+				<section data-background="lib/img/steam.jpg" data-background-color="#000032" data-background-size="60%">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Steam
+					</aside>
+				</section>
+
+				<section data-background="lib/svg/language-selection-iso-codes.svg" data-background-color="#000032" data-background-size="80%">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Si vous ne supportez que quelques langues sur un site national
+					</aside>
+				</section>
+
+				<section data-background="lib/svg/language-selection-link-splash-page.svg" data-background-color="#000032" data-background-size="80%">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						L'icone de la planète... pour signifier le changement de culture
+					</aside>
+				</section>
+
+
+				<section data-background="lib/svg/language-icon.svg" data-background-size="40%">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Un concours de design a été lancé pour résoudre ce problème, voici le vainqueur
+						Ne pas utiliser les drapeaux !<br/>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Les langues</h2>
+					<h2>L'espace et le temps</h2>
+					<h2>Les chiffres</h2>
+					<h2>Autres</h2>
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Et maintenant, que l'on sait à qui l'on s'adresse. quelques particularités intéressantes
+					</aside>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h1 class="light">Les langues</h1>
+					<img src="lib/svg/emoji/1f61b.svg">&nbsp;<img src="lib/svg/emoji/1f61b.svg">&nbsp;<img src="lib/svg/emoji/1f61b.svg">
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						Nous avons l'habitude des particularités de langues (direction d'écriture) mais ....
+						<li>Type d'écritures (latin, arabe, cyrillique, chinois, klingon, etc.)</li>
+						<li>Spécificités (dialects, registre de langue, styles, etc.)</li>
+						<li>Conventions d'écriture (des chiffres, des dates, contextuelles, etc.)</li>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Traduction</h2>
+					<img src="lib/svg/emoji/1f640.svg">
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						Traduction<br/>
+						Vidéos (audio, titres, sous-titres, ..)<br/>
+						Textes (contenu, éléments d'interface, messages d'erreurs, ..)<br/>
+						Icônes & logos (dans une certaine langue, pour une certaine culture, dans un certain contexte)<br/>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Pluralisation</h2>
+					<p>Est-ce que ce mot existe d'ailleurs ?</p>
+					<img src="lib/svg/emoji/1f468-1f469-1f466-1f466.svg">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						En russe c'est compliqué .. est-ce que quelqu'un peut nous aider
+					</aside>
+				</section>
+
+				<section data-background="rgb(63, 63, 63)">
+					<code>
+<pre>
+en : "%count% comment
+ |%count% comments"
+ru : "%count% комментарий
+ |%count% комментария
+ |%count% комментариев"
+fr : "%count% commentaire
+ |%count% commentaires"
+</pre>
+					</code>
+					</section>
+
+				<section>
+					<h2>Féminisation</h2>
+					<p>Et celui-là ?</p>
+					<img src="lib/svg/emoji/1f64b.svg">&nbsp;<img src="lib/svg/emoji/1f645.svg">&nbsp;<img src="lib/svg/emoji/1f926.svg">
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						Parité - ;-)<br/>
+						vous êtes bien connecté<b>e</b>
+					</aside>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h1 class="light">Temps &&nbsp;espace</h1>
+					<img src="lib/svg/emoji/23f3.svg">&nbsp;<img src="lib/svg/emoji/1f680.svg">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Pour chaque culture, d'autres représentation du temps et de l'espace
+					</aside>
+				</section>
+
+				<section data-background="lib/svg/timezone.svg"  data-background-size="contain">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Les fuseaux horaires<br/>
+						Meilleur exemple de temps et d'espace<br/>
+						Respecte ou pas les frontières
+					</aside>
+				</section>
+
+				<section data-background="lib/svg/emoji/1f5d3.svg" data-background-color="#000032" data-background-size="50%">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						<strong>Début de semaine</strong><br/>
+						le classic ... la semaine commence le lundi ou le dimanche ?
+					</aside>
+				</section>
+
+				<section data-background="lib/svg/emoji/1f1f0-1f1f7.svg" data-background-color="#000032" data-background-size="50%">
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						L'âge des coréens🇰🇷 qui commence à 1 et (qui dépend des calendriers 🌞/🌔)<br/>
+						Au niveau de la corée du nord, nous avons eu du mal à vérifier
+					</aside>
+				</section>
+
+				<section data-background="lib/img/lorie-weekend.gif" data-background-color="#000032" data-background-size="cover">
+					<aside class="notes">
+						<strong>G -> M</strong>
+						Le week-end prochain pour vous c'est ce week-end là qui vient ou celui d'après<br/>
+						On l'a implémenté dans momentJS, une librairie qui s'occupe des manipulations de dates
+					</aside>
+				</section>
+
+				<section data-background="lib/svg/emoji/1f37b.svg" data-background-color="#000032" data-background-size="50%">
+					<aside class="notes">
+						<strong>M -> G</strong>
+						<p>On se voit à 5 heures</p>
+						<p>c'est un peu tot ...</p>
+						AM/PM tout ça ... <br/>
+					</aside>
+				</section>
+
+				<section>
+					<img src="lib/svg/emoji/2603.svg" alt="" height="200vh"/>
+					<img src="lib/svg/emoji/26f1.svg" alt="" height="200vh"/>
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Heure d'été ...<br/>
+						Au Chili par exemple, il passe à l'heure d'été début avril ...<br/>
+						Sinon une petite pensée à tous ceux qui prévoient leur backup à 1h30 du matin le week-end de changement d'heure Et qui ont eu 0 backup ce printemps et 2 cet automne.
+					</aside>
+				</section>
+
+
+				<section>
+					<h2><span class="monospaced">12/24/2016</span></h2>
+					<h4>ou</h4>
+					<h2><span class="monospaced">24-12-2016</span></h2>
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						La représentation des dates<br/>
+					</aside>
+				</section>
+
+				<section data-background="lib/img/chine_boutan.gif" data-background-size="cover" data-background-position="center center">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						<b>Vision du monde</b><br/>
+						la frontière entre la chine et le Bhoutan qui est disputées depuis des décénie. GoogleMap affiche une frontière différente selon le pays dans lequel on se connecte<br/>
+						<!--
+						- http://qz.com/224821/see-how-borders-change-on-google-maps-depending-on-where-you-view-them/
+						- http://qz.com/811513/westworlds-uncanny-intricate-opening-credits-sequence-wants-to-disorient-you/
+						-->
+					</aside>
+				</section>
+
+				<section data-background="lib/img/refugees.jpg" data-background-size="cover">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						<b>La politique</b><br/>
+						ROT, c'est le code ISO de quel pays ? (refugee-olympic-team)<br/>
+						-> JO pays des réfugiers, certain pays non reconnu par le ONU, mais reconnu par le CIO</br>
+					</aside>
+				</section>
+
+				<section data-background="lib/img/uww.jpg" data-background-color="#fff" data-background-size="cover">
+					<aside class="notes">
+						<strong>Marc</strong><br/>
+						Certaine fédérations sportives, comme la lutte, choisi de permettre à certain "pays" de participer
+					</aside>
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+					<h1 class="light">Les chiffres</h1>
+					<img src="lib/svg/emoji/0034-20e3.svg">&nbsp;<img src="lib/svg/emoji/0032-20e3.svg">
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						beaucoup de particularité aussi ici ...
+					</aside>
+				</section>
+
+				<section>
+					<h3>
+						<img src="lib/svg/emoji/1f4b7.svg" alt="" />
+						<img src="lib/svg/emoji/1f4b6.svg" alt="" />
+						<img src="lib/svg/emoji/1f4b5.svg" alt="" />
+						<img src="lib/svg/emoji/1f4b4.svg" alt="" />
+					</h3>
+					<p>Le formatage des milliers</p>
+					<table>
+					<thead>
+						<tr>
+							<th>Locale</th>
+							<th align="right" style="padding-right: 0!important;">Valeur</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>fr_CH</td>
+							<td align="right">12'340.40</td>
+						</tr>
+						<tr>
+							<td>fr_FR</td>
+							<td align="right">12 340,40</td>
+						</tr>
+						<tr>
+							<td>en_US</td>
+							<td align="right">12,340.40</td>
+						</tr>
+						<tr>
+							<td>de_DE</td>
+							<td align="right">12.340,40</td>
+						</tr>
+					</tbody>
+				</table>
+				<aside class="notes">
+						<strong>Guillaume</strong><br/>
+				</aside>
+				</section>
+
+				<section>
+					<h3>
+						<img src="lib/svg/emoji/1f4b7.svg" alt="" />
+						<img src="lib/svg/emoji/1f4b6.svg" alt="" />
+						<img src="lib/svg/emoji/1f4b5.svg" alt="" />
+						<img src="lib/svg/emoji/1f4b4.svg" alt="" />
+					</h3>
+					<p>La position de la devise</p>
+					<table>
+					<thead>
+						<tr>
+							<th>Locale</th>
+							<th align="right" style="padding-right: 0!important;">Valeur</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>fr_CH</td>
+							<td align="right">CHF 12'340.40</td>
+						</tr>
+						<tr>
+							<td>fr_FR</td>
+							<td align="right">12 340,40 €</td>
+						</tr>
+						<tr>
+							<td>en_US</td>
+							<td align="right">$ 12,340.40</td>
+						</tr>
+						<tr>
+							<td>de_DE</td>
+							<td align="right">12.340,40 €</td>
+						</tr>
+					</tbody>
+				</table>
+				<aside class="notes">
+						<strong>Guillaume</strong><br/>
+				</aside>
+				</section>
+
+				<section>
+					<h1>"Jean-Luc"</h1>
+					<img src="lib/svg/emoji/1f629.svg" alt="" height="100vh"/>
+					<h2><span class="monospaced" style="color:red;">votre prénom est invalide</span></h2>
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						nom invalide ...<br/>
+						Suède numéro postaux avec des espaces<br/>
+						En Suisse le numéro de rue à la fin de l'adresse ... en France au début : "8, rue de la République"
+					</aside>
+				</section>
+
+
+				<section data-background="lib/img/form_phone.png" data-background-color="#ffffff" data-background-size="contain">
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						Numéro de téléphone, merci squarespace
+					</aside>
+				</section>
+
+				<section data-background="lib/svg/emoji/1f321.svg" data-background-color="#000032" data-background-size="50%">
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						Systèmes de mesures<br/>
+						Température, fahrenheit/Celsius, système métrique, tout ça ...
+					</aside>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h1 class="light">Quelques miscellanées</h1>
+					<img src="lib/svg/emoji/1f957.svg">
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						Autres considérations,juste un début de liste ;-)
+					</aside>
+				</section>
+
+				<section>
+					<h2>Typographie(s)</h2>
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+							Exemple de la Noto :-) 500MO 😱<br/>
+							Bons caractères (ceux de la langue)<br/>
+							Bon sens (de lecture) a11y / accessibilité
+					</aside>
+				</section>
+
+				<section>
+					<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 256">
+<defs>
+<style>
+  .cls-1 {
+	fill: #ffffff;
+  }
+</style>
+</defs>
+<title>religion-icons-research</title>
+<g>
+<path class="cls-1" d="M375.91,142.87c0-.15,0-.29-.07-.44s-.06-.26-.09-.39-.06-.25-.1-.37-.09-.25-.13-.37-.08-.25-.13-.37-.1-.23-.16-.34-.11-.25-.18-.37l-.19-.31c-.07-.12-.14-.24-.22-.36s-.16-.22-.24-.33l-.22-.3c-.15-.19-.31-.36-.48-.53l0-.05-40-40a8,8,0,0,0-11.31,11.31L360,147.31V192h-8V160c0-.26,0-.53,0-.79s0-.22,0-.34,0-.29-.07-.44-.06-.26-.09-.39-.06-.25-.1-.37-.09-.25-.13-.37-.08-.25-.13-.37-.1-.23-.16-.34-.11-.25-.18-.37l-.19-.31c-.07-.12-.14-.24-.22-.36s-.16-.22-.24-.33l-.22-.3c-.15-.19-.31-.36-.48-.53l0-.05L312,116.69V56a8,8,0,0,0-16,0v64a8,8,0,0,0,2.34,5.66L336,163.31V208h40V144c0-.26,0-.53,0-.79S375.93,143,375.91,142.87Z"/>
+<path class="cls-1" d="M464,48a8,8,0,0,0-8,8v60.69l-37.66,37.66-.16.18c-.13.13-.25.27-.37.41s-.17.23-.26.34l-.21.29c-.08.13-.16.26-.24.39l-.17.28c-.07.13-.13.26-.19.39s-.1.21-.15.32-.1.26-.14.38-.09.23-.12.36-.07.26-.1.39-.07.24-.09.37,0,.3-.07.46,0,.21,0,.32c0,.27,0,.53,0,.8v32h-8V147.31l37.66-37.66a8,8,0,0,0-11.31-11.31l-40,40-.16.18c-.13.13-.25.27-.37.41s-.17.23-.26.34l-.21.29c-.08.13-.16.26-.24.39l-.17.28c-.07.13-.13.26-.19.39s-.1.21-.15.32-.1.26-.14.38-.09.23-.12.36-.07.26-.1.39-.07.24-.09.37,0,.3-.07.46,0,.21,0,.32c0,.27,0,.53,0,.8v64h40V163.31l37.66-37.66A8,8,0,0,0,472,120V56A8,8,0,0,0,464,48Z"/>
+<path class="cls-1" d="M140.44,97.34a8,8,0,0,0-11.09,2.22l-9.73,14.59-17.22-23a8,8,0,0,0-13.75,1.65l-24,56A8,8,0,0,0,65.75,157l21.6,27H48v16h56a8,8,0,0,0,6.24-13l-29-36.26L97.9,111.87l15.7,20.93a8,8,0,0,0,13.06-.36l16-24A8,8,0,0,0,140.44,97.34Z"/>
+<circle class="cls-1" cx="112" cy="72" r="16"/>
+<path class="cls-1" d="M699.8,92.9a43.18,43.18,0,0,0-10.91-43.32L672,32.69,655.15,49.53a43.19,43.19,0,0,0-11,43.36c-12.38,5-20.2,13.29-20.2,23.1v80c0,16,20.64,28,48,28s48-12,48-28V116C720,106.18,712.18,97.85,699.8,92.9Zm-39.43-23a27,27,0,0,1,6.05-9L672,55.31l5.62,5.62a27.18,27.18,0,0,1,6.15,29.37,9.1,9.1,0,0,1-2.31,2.63A12.43,12.43,0,0,1,679.75,94a8,8,0,0,0-15.5,0,12.45,12.45,0,0,1-1.71-1.12,9.1,9.1,0,0,1-2.31-2.62A27,27,0,0,1,660.37,69.87ZM704,196c0,4.23-12.15,12-32,12s-32-7.77-32-12V137.21c8.37,4.26,19.48,6.79,32,6.79s23.63-2.53,32-6.79Zm-32-68c-19.85,0-32-7.77-32-12,0-2.73,5.05-6.92,14-9.56a29.92,29.92,0,0,0,7.73,3.88c.76.25,1.54.47,2.32.67v1a8,8,0,0,0,16,0v-1c.78-.2,1.55-.42,2.32-.67a29.92,29.92,0,0,0,7.73-3.88c8.9,2.64,14,6.83,14,9.56C704,120.23,691.85,128,672,128Z"/>
+</g>
+</svg>
+					<aside class="notes">
+						<h2>Pictogrammes</h2>
+						<strong>Guillaume</strong><br/>
+						<ul>
+							<li>Les représentations de la culture (religion)</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-background-color="#bdbdb5" data-background="lib/img/coloursculture.png" data-background-size="contain">
+					<aside class="notes">
+						<h2>Couleurs</h2>
+						<strong>Guillaume</strong><br/>
+						<ul>
+							<li>Tout ce qui est valide est vert, chez nous</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Particularités culturelles régionales</h2>
+					<p>(voir hyper-régionales ou drôles)</p>
+					<aside class="notes">
+						<strong>Guillaume</strong><br/>
+						<ul>
+							<li>2.5 pièces à Genève ou Lausanne</li>
+							<li>Doucette, rampon ou mâche ?</li>
+						</ul>
+					</aside>
+				</section>
+
+			</section>
+
+
+			<section>
+
+				<section>
+					<h1 class="light">Takeaways</h1>
+					<img src="lib/svg/emoji/1f648.svg">&nbsp;<img class="plain" src="lib/svg/emoji/1f649.svg">&nbsp;<img class="plain" src="lib/svg/emoji/1f64a.svg">
+					<aside class="notes">
+					- Ne partez sur aucun aquis 🙈🙊🙉<br>
+					- Nation ≠ culture ≠ langue (et les gens bougent!). Le lieu géographique n'est pas un critère fiable.<br>
+					- Basez-vous un maximum sur les librairies d'internationalisation dèjà en place<br>
+					- Utilisez les UX-pattern pour le changement de culture (par pitié, pas de drapeaux pour les langues)<br>
+					- Responsabilité de ces sujets ... est partagée par tous les membres de l'équipe du projet<br>
+					</aside>
+				</section>
+
+			</section>
+			
+
+			<!-- ### MERCI -->
+
+			<section>
+				<section data-background="#ff0099">
+					<h1>Merci !</h1>
+					<aside class="notes">
+						Thank you
+					</aside>
+				</section>
+					<section data-background="#570039">
+						<h3>Questions/Réponses</h3>
+						<p>Maintenant ou plus tard <a href="https://twitter.com/antistatique">@antistatique</a></p>
+					</section>
+
+				<section>
+					<h1>©</h1>
+					<table>
+						<tbody>
+							<tr>
+								<td width="50%">Présentation</td>
+								<td width="50%">reveal.js</td>
+							</tr>
+							<tr>
+								<td>Typography</td>
+								<td>Noto Sans Regular<br>
+									Noto Sans Bold</br>
+									Noto Mono</td>
+								</tr>
+								<tr>
+									<td>Emojis</td>
+									<td>emojione.com</td>
+								</tr>
+							</tbody>
+						</table>
+						<aside class="notes">
+							Credits
+						</aside>
+					</section>
+			</section>
+
+
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealHighlight, RevealNotes ]
+			});
+			// Reveal.configure({ showNotes: true });
+		</script>
+	</body>
+</html>
