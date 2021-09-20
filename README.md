@@ -61,12 +61,12 @@ Some reveal.js features, like external markdown and speaker notes, require that 
 1. Clone this repository
 
 2. Install dependencies
-   ```sh
+   ```
  $ npm install
    ```
 
 3. Serve the presentation and monitor source files for changes
-   ```sh
+   ```
    npm start -- --port=1234
    ```
 
