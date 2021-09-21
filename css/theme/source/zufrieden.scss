@@ -60,7 +60,7 @@ $headingTextTransform: none;
 $backgroundColor: #ffffff;
 $linkColor: #FF0099;
 $linkColorHover: #FF7495;
-$selectionBackgroundColor: #FFF618;
+$selectionBackgroundColor: #FF0099;
 
 // Change text colors against dark slide backgrounds
 @include dark-bg-text-color(#FF0099);
@@ -83,6 +83,9 @@ $selectionBackgroundColor: #FFF618;
   justify-content: space-between;
 
 }
+.reveal h1{
+  // font-size:3em!important;
+}
 
 .intro-logo{
   margin:1em;
@@ -91,6 +94,7 @@ $selectionBackgroundColor: #FFF618;
 .profile-card{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   img{
     width:3em;
     height: 3em;
@@ -100,6 +104,13 @@ $selectionBackgroundColor: #FFF618;
     text-align:left;
     margin-right: 1em;
   }
+}
+
+.roue-de-la-chance{
+  animation-name: spin;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .pastille-qui-tourne{
@@ -113,7 +124,7 @@ $selectionBackgroundColor: #FFF618;
     z-index:10;
     color: black;
     transform: rotate(-20deg);
-    margin: 0.5em 0.5em 0.5em 0.4em;
+    margin: 0.7em 0.5em 0.5em 0.4em;
     font-size: 80%;
   }
   svg{

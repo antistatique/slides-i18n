@@ -67,7 +67,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   --code-font: monospace;
   --link-color: #FF0099;
   --link-color-hover: #FF7495;
-  --selection-background-color: #FFF618;
+  --selection-background-color: #FF0099;
   --selection-color: #fff; }
 
 .reveal-viewport {
@@ -82,12 +82,12 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 .reveal ::selection {
   color: #fff;
-  background: #FFF618;
+  background: #FF0099;
   text-shadow: none; }
 
 .reveal ::-moz-selection {
   color: #fff;
-  background: #FFF618;
+  background: #FF0099;
   text-shadow: none; }
 
 .reveal .slides section,
@@ -343,7 +343,8 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 
 .profile-card {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center; }
   .profile-card img {
     width: 3em;
     height: 3em;
@@ -351,6 +352,12 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   .profile-card p {
     text-align: left;
     margin-right: 1em; }
+
+.roue-de-la-chance {
+  animation-name: spin;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
 
 .pastille-qui-tourne {
   position: absolute;
@@ -363,7 +370,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
     z-index: 10;
     color: black;
     transform: rotate(-20deg);
-    margin: 0.5em 0.5em 0.5em 0.4em;
+    margin: 0.7em 0.5em 0.5em 0.4em;
     font-size: 80%; }
   .pastille-qui-tourne svg {
     position: absolute;
